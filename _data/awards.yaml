@@ -1,0 +1,89 @@
+awards:
+  - competition: "SW-Centered University Digital Competition"
+    award: "Grand Prize (2nd Place, Award of the Chief of IITP)"
+    description: "<b><i>Planned to run poster session on 2025 SK AI Summit!</i></b> <br/>Developed A-EYE, an AI-powered real-time environmental recognition system for the visually impaired, enabling 3-second hazard detection, GPS-guided navigation, OCR/text & face recognition with scene descriptions, emergency alerts, and adjustable 1–10× audio for safer independent mobility."
+    date: "Aug. 2025"
+    github: "https://github.com/jun-brro/a-eye-public"
+    media: "https://www.donga.com/news/It/article/all/20250813/132178039/1"
+    selected: y
+
+  - competition: "BUIDL AI Hackathon"
+    award: "1st Prize (SAGA Track)"
+    description: "Developed full-stack Web3 application enabling autonomous, non human-intervention agent interactions within EVM token ecosystems, featured by Metamask integration."
+    date: "Apr. 2025"
+    github: "https://github.com/A-pl-Hackathon"
+    media: "https://devfolio.co/projects/apl-79f6"
+    selected: y
+
+  - competition: "15th DB Insurance & Finance Contest"
+    award: "Selection Prize"
+    description: "Implemented dual-model function-call system (tool design, tool-call pipeline) into insurance design / analysis pipeline."
+    date: "Mar. 2025"
+    github: "https://github.com/jun-brro/APT-call-agent"
+    selected: n
+
+  - competition: "YAICON, 5th"
+    award: "Grand Prize (1st Place)"
+    description: "Established a pipeline capable of performing 3D reconstruction of a moving scene using only two shots, followed by editing the reconstructed scene."
+    date: "Nov. 2024"
+    github: "https://github.com/Two-Shots-Are-Enough"
+    selected: y
+
+  - competition: "YAICON, 4th"
+    award: "Siver Prize (2nd Place)"
+    description: "Constructed personalized music recommendation system based on MU-LLaMA embeddings."
+    date: "Aug. 2024"
+    github: "https://github.com/AJTKS"
+    selected: n
+
+  - competition: "14th DB Financial Economics Contest, 2024"
+    award: "Honorable Mention"
+    description: "Developed time series prediction model using LSTM, integrating with prediction of solar power energy generation capacity of certain area."
+    date: "Apr. 2024"
+    selected: n
+
+  - competition: "The 3rd Entrepreneurship Competition for People with and without Disabilities, 2024"
+    award: "Grand Prize (1st Place, Awarded by the Minister of Education, Republic of Korea.)"
+    description: "Developed online demo service of <i>SUNNY Braille</i> with AI integration, containing custom-pretrained math problem detection model (based on ViT)"
+    date: "Feb. 2024"
+    media: "https://www.youtube.com/live/A03TMQAcZQw?si=WWvmLa6N6o60VnZF&t=15235"
+    github: "https://github.com/sunnybraille"
+    selected: y
+
+  - competition: "Yonsei AI Entrepreneurship Competition, 2023"
+    award: "3rd prize"
+    description: "Issued by Yonsei University Computing College. Awarded with the enhanced version of <i>SUNNY Braille</i>."
+    date: "Dec. 2023"
+    selected: n
+
+  - competition: "International Capstone Design Fair, 2023"
+    award: "2nd prize"
+    description: "Awarded with the enhanced version of <i>SUNNY Braille</i>."
+    date: "Oct. 2023"
+    selected: n
+
+  - competition: "D-Tech Competition, 2023"
+    award: "Grand Prize (1st Place, Awarded by the Minister of Health and Welfare, Republic of Korea)"
+    description: "Developed baseline full stack webpage to serve online math braille service <i>SUNNY Braille.</i>"
+    date: "Sep. 2023"
+    media: "https://www.youtube.com/watch?v=bBWRITlDt9c"
+    selected: y
+
+  - competition: "D-Tech Competition, 2023"
+    award: "EDUTECH Prize"
+    description: "Issued by Korea Edutech Industry Association (KEIA)"
+    date: "Sep. 2023"
+    media: "https://zdnet.co.kr/view/?no=20231123100712"
+    selected: n
+
+  - competition: "ELYPECS Young Leaders"
+    award: "Top-team Prize (Harmony Prize)"
+    date: "Jan. 2023"
+    media: "https://zdnet.co.kr/view/?no=20230131152642"
+    selected: n
+
+  - competition: "MLB HRDX Korea"
+    award: "Top 10 Supporters"
+    date: "Sep. 2022"
+    media: "https://www.mlb.com/news/mariners-win-al-division-series-game-2-2025"
+    selected: n

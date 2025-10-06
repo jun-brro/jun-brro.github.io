@@ -6,34 +6,15 @@ title: Home
 <div class="docs-section" id="bio">
   <h4>Bio</h4>
   <p>
-  My research develops tools for analyzing <b>large-scale social data</b>, aiming to provide a better understanding of <b>social structure and behaviors</b> online while also impacting the <b>design of digital social systems</b>. 
-  My recent work has focused on social media algorithms
-  [<a href="assets/publications/2024_feedwizard/paper.pdf" target="_blank">ArXiv'24</a>,
-  <a href="assets/publications/2023_embedding_societal_values/paper.pdf" target="_blank">JOTS'23</a>],
-  reducing political polarization online 
-  [<a href="assets/publications/2022_newsbridge/paper.pdf" target="_blank">ICWSM'22a</a>,
-  <a href="assets/publications/2022_flipfeed/paper.pdf" target="_blank">ICWSM'22b</a>,
-  <a href="assets/publications/2021_balanced_inf_max/paper.pdf" target="_blank">WSDM'21</a>,
-  <a href="assets/publications/2018_social_mirror/paper.pdf" target="_blank">WWW'18</a>],
-  improving the health of online conversations 
-  [<a href="assets/publications/2021_dtox/paper.pdf" target="_blank">WWW'21</a>, 
-  <a href="assets/publications/2021_social_catalysts/paper.pdf" target="_blank">CSCW'21</a>], 
-  and causal inference in social systems 
-  [<a href="assets/publications/2024_ope_lipschitz/paper.pdf" target="_blank">ICML'24</a>,
-  <a href="assets/publications/2023_peer_review/paper.pdf" target="_blank">NeurIPS'23</a>,
-  <a href="assets/publications/2017_detecting_network_effects/paper.pdf" target="_blank">KDD'17</a>,
-  <a href="assets/publications/2019_biometrika/paper.pdf" target="_blank">Biometrika'19</a>]. 
-  My research often falls at the intersections of Social Networks, Machine Learning, and Causal Inference.
+  Hello 👋 I'm Junhyeong Park, an undergraduate research intern at <a href="https://alinlab.kaist.ac.kr/" target="_blank">ALIN Lab (KAIST)</a>, advised by prof. Jinwoo Shin.
+  I am currently doing my graduation project at <a href="https://mmai.yonsei.ac.kr/" target="_blank">MMAI Lab (Yonsei)</a>, advised by prof. Jongyoo Kim.
+  I have done my research internship at <a href="https://mirlab.yonsei.ac.kr/" target="_blank">MIRLAB (Yonsei)</a>, advised by prof. Youngjae Yu.
+  I am currently majoring Nano Science & Engineering, and doing Electric & Electronic Engineering as a double-major.
+  I expect to complete my bachelor's degree in the Fall semester of 2026.
+  I believe that the fusion of various modalities, particularly centered around language models, is essential for AI to positively impact society.
+  Especically I'm interested in <b><i>VLA models</i></b> that can effectively understand and learn from action label free datasets.
+  Also, applying <b><i>multimodal reasoning models</i></b> into science research is one of my interests.
   </p>
-
-  <p>
-  I'm an Assistant Professor in the Information School at the University of Washington.
-  Before joining UW, I was a Postdoc at Stanford University, mentored by <a href="https://web.stanford.edu/~jugander/" target="_blank">Johan Ugander</a>.
-  I received my Ph.D. from MIT in 2020 under the supervision of Deb Roy. 
-  Prior to coming to MIT, I spent one year in Paris and one year in Barcelona doing a M.Sc. in Data mining and Knowledge Management. 
-  I got my B.Sc. from Staffordshire University with First Class honors in Computer Science. 
-  Throughout my graduate studies, I spent several summers doing internships in industry, including Yahoo! Labs, Amazon, LinkedIn, and Facebook.
-  </p> 
 </div>
 
 <!--
@@ -70,6 +51,8 @@ title: Home
   <sup>‡</sup> indicates equal contribution.
   </p>
 
+  <!-- Temporarily disabled Selected tab -->
+  <!--
   <ul class="tab-nav">
     <li><div class="button active" data-ref="#papers-selected">Selected</div></li>
     <li><div class="button" data-ref="#papers-all">All</div></li>
@@ -114,6 +97,11 @@ title: Home
     </div>
 
     <div class="tab-pane" id="papers-all">
+  -->
+
+  <!-- Showing all papers only -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="papers-all">
       {% for paper in site.data.publications.papers %}
         <div class="paper">
           <p class="title"><b>{{ paper.title }}</b></p>
@@ -149,6 +137,7 @@ title: Home
       {% endfor %}
     </div>
   </div>
+  <!-- End of temporarily disabled section -->
 </div>
 
 <!-- ========== PROJECTS ========== 
@@ -226,11 +215,73 @@ title: Home
 </div>
 -->
 
+<!-- ========== AWARDS ========== -->
+<div class="docs-section" id="awards">
+  <h4>Awards</h4>
+
+  <ul class="tab-nav">
+    <li><div class="button active" data-ref="#awards-selected">Selected</div></li>
+    <li><div class="button" data-ref="#awards-all">All</div></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="awards-selected">
+      {% assign selected_awards = site.data.awards.awards | where: "selected", "y" %}
+      {% for award in selected_awards %}
+        <div class="paper">
+          <p class="title"><b>{{ award.competition }}</b>
+            {% if award.date %}
+              <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
+            {% endif %}
+          </p>
+          <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+          <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
+          {% if award.github or award.media %}
+            <div class="paper-buttons">
+              {% if award.github %}
+                <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
+              {% endif %}
+              {% if award.media %}
+                <a class="button" href="{{ award.media }}" target="_blank">Media</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="tab-pane" id="awards-all">
+      {% for award in site.data.awards.awards %}
+        <div class="paper">
+          <p class="title"><b>{{ award.competition }}</b>
+            {% if award.date %}
+              <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
+            {% endif %}
+          </p>
+          <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+          <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
+          {% if award.github or award.media %}
+            <div class="paper-buttons">
+              {% if award.github %}
+                <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
+              {% endif %}
+              {% if award.media %}
+                <a class="button" href="{{ award.media }}" target="_blank">Media</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
 <!-- ========== RESUME ========== -->
 <div class="docs-section" id="resume">
   <h4>Vitæ</h4>
 
-  <p>Full Resume in <a href={{ "/assets/cv/cv_web.pdf" | prepend: site.baseurl }} target="_blank">PDF</a>.</p>
+  <p>Full Resume in <a href={{ "/assets/cv/cv_web.pdf" | prepend: site.baseurl }} target="_blank">PDF (TBU)</a>.</p>
 
   <!-- The Timeline -->
   <ul class="timeline">
@@ -251,18 +302,3 @@ title: Home
     {% endfor %}
   </ul>
 </div>
-
-<div class="docs-section" id="template">
-  <h4>Website Design</h4>
-  Since I made this website, many people have found this Jekyll template useful [
-  {% for template_user in site.data.template_users.template_users %}
-  <a href="{{ template_user }}" target="_blank">{{ forloop.index }}</a>{% if forloop.last %}{% else %},{% endif %}
-  {% endfor %}
-  ].
-  <!--<br/>-->
-  You can find all the code needed to build your website in this <a href="https://github.com/msaveski/www_personal" target="_blank">GitHub repo</a>.
-  Feel free to use it. <br/>
-
-  If you end up using it, please link to here and drop me an email.
-  I'm always happy to see people using it.
-</div>  
