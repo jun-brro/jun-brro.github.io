@@ -6,13 +6,32 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>{{ site.data.main_info.name }} | {{ page.title }}</title>
-  <meta name="description" content="Junhyeong Park">
+  <meta name="description" content="Junhyeong Park - Undergraduate Researcher at KAIST ALIN Lab and Yonsei University. Research interests in Vision-Language-Action models and multimodal AI for science.">
   <meta name="author" content="Junhyeong Park">
-  <meta property="og:title" content="Junhyeong Park" />
+  <meta name="keywords" content="Junhyeong Park, KAIST, Yonsei University, VLA models, Vision-Language-Action, Multimodal AI, Machine Learning, AI Research, Computer Vision, NLP">
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jun-brro.kr" />
+  <meta property="og:title" content="Junhyeong Park - AI Researcher" />
+  <meta property="og:description" content="Undergraduate Researcher at KAIST ALIN Lab. Interested in VLA models and multimodal reasoning for science." />
+  <meta property="og:image" content="https://jun-brro.kr/assets/profile-pics/profile.jpg" />
   <meta property="og:site_name" content="Junhyeong Park" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@junbrro96" />
+  <meta name="twitter:creator" content="@junbrro96" />
+  <meta name="twitter:title" content="Junhyeong Park - AI Researcher" />
+  <meta name="twitter:description" content="Undergraduate Researcher at KAIST ALIN Lab. Interested in VLA models and multimodal reasoning for science." />
+  <meta name="twitter:image" content="https://jun-brro.kr/assets/profile-pics/profile.jpg" />
+  
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://jun-brro.kr" />
+  
+  <!-- Additional SEO -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,6 +78,38 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
   <link rel="shortcut icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
+
+  <!-- Structured Data (Schema.org) for SEO
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.data.main_info.name }}",
+    "url": "https://jun-brro.kr",
+    "image": "https://jun-brro.kr{{ site.data.main_info.profile_pic }}",
+    "jobTitle": "Undergraduate Researcher",
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "KAIST ALIN Lab"
+      },
+      {
+        "@type": "Organization",
+        "name": "Yonsei University"
+      }
+    ],
+    "sameAs": [
+      "{{ site.data.main_info.linkedin }}",
+      "{{ site.data.main_info.github }}",
+      "{{ site.data.main_info.google_scholar }}",
+      "{{ site.data.main_info.x }}"
+    ],
+    "email": "pljh0906@yonsei.ac.kr",
+    "alumniOf": "Yonsei University",
+    "knowsAbout": ["Machine Learning", "Computer Vision", "Multimodal AI", "Vision-Language-Action Models", "Artificial Intelligence"]
+  }
+  </script>
 
 </head>
 <body>
