@@ -17,6 +17,21 @@ title: Home
   </p>
 </div>
 
+<!-- ========== NEWS ========== -->
+<div class="docs-section" id="news">
+  <h4>News</h4>
+  <ul>
+    {% for item in site.data.news.news %}
+      <li>
+        <b>{{ item.date }}</b>: {{ item.description }}
+        {% if item.link %}
+          <a href="{{ item.link }}" target="_blank">[Link]</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
 <!--
 <div class="docs-section" id="prospective-students">  
   <h4>Prospective Students</h4>
