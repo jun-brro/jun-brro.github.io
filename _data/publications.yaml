@@ -1,6 +1,6 @@
 papers:
   - title: "Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?"
-    authors: "Jiwan Chung, Janghan Yoon, <b>Junhyeong Park</b>, Sangeyl Lee, Joowon Yang, Sooyeon Park, Youngjae Yu"
+    authors: "<a href='https://jiwanchung.github.io/' target='_blank'>Jiwan Chung</a>, <a href='https://github.com/jeffrobot' target='_blank'>Janghan Yoon</a>, <b>Junhyeong Park</b>, Sangeyl Lee, Joowon Yang, Sooyeon Park, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
     venue: "ACL 2025 Poster"
     paper_pdf: "https://arxiv.org/abs/2505.24211"
     code: "https://github.com/JiwanChung/ACON"
@@ -8,7 +8,7 @@ papers:
     selected: y
 
   - title: "InfoCausalQA:Can Models Perform Non-explicit Causal Reasoning Based on Infographic?"
-    authors: "Keummin Ka<sup>‡</sup>, <b>Junhyeong Park<sup>‡</sup></b>, Jaehyun Jeon, Youngjae Yu"
+    authors: "Keummin Ka<sup>‡</sup>, <b>Junhyeong Park<sup>‡</sup></b>, Jaehyun Jeon, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
     venue: "Arxiv'25: arXiv preprint. 2025."
     paper_pdf: "https://arxiv.org/abs/2508.06220"
     selected: y
