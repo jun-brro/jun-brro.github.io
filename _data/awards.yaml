@@ -1,7 +1,15 @@
 awards:
+  - competition: "SK AI Summit AI's Got Talent"
+    award: "1st Prize"
+    description: "Developed A-EYE, an AI-powered real-time environmental recognition system for the visually impaired, enabling 3-second hazard detection, GPS-guided navigation, OCR/text & face recognition with scene descriptions, emergency alerts, and adjustable 1–10× audio for safer independent mobility."
+    date: "Nov. 2025"
+    github: "https://github.com/jun-brro/a-eye-public"
+    media: "https://www.kdfnews.com/news/articleView.html?idxno=169745"
+    selected: y
+
   - competition: "SW-Centered University Digital Competition"
     award: "Grand Prize (2nd Place, Award of the Chief of IITP)"
-    description: "<b><i>Planned to run poster session on 2025 SK AI Summit!</i></b> <br/>Developed A-EYE, an AI-powered real-time environmental recognition system for the visually impaired, enabling 3-second hazard detection, GPS-guided navigation, OCR/text & face recognition with scene descriptions, emergency alerts, and adjustable 1–10× audio for safer independent mobility."
+    description: "<b><i>Conducted poster session on 2025 SK AI Summit!</i></b> <br/>Developed A-EYE, an AI-powered real-time environmental recognition system for the visually impaired, enabling 3-second hazard detection, GPS-guided navigation, OCR/text & face recognition with scene descriptions, emergency alerts, and adjustable 1–10× audio for safer independent mobility."
     date: "Aug. 2025"
     github: "https://github.com/jun-brro/a-eye-public"
     media: "https://www.donga.com/news/It/article/all/20250813/132178039/1"
