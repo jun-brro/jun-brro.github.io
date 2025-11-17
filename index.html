@@ -65,7 +65,7 @@ title: Home
 
 <!-- ========== PUBLICATIONS ========== -->
 <div class="docs-section" id="publications">
-  <h4>Publications</h4>
+  <h4>Publications & Workshops</h4>
 
   <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/>
   <sup>‡</sup> indicates equal contribution.
@@ -111,6 +111,10 @@ title: Home
               <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
             {% endif %}
 
+            {% if paper.link %}
+              <a class="button" href="{{ paper.link }}" target="_blank">Link</a>
+            {% endif %}
+
           </div>
         </div>
       {% endfor %}
@@ -150,6 +154,10 @@ title: Home
 
             {% if paper.data %}
               <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+            {% endif %}
+
+            {% if paper.link %}
+              <a class="button" href="{{ paper.link }}" target="_blank">Link</a>
             {% endif %}
 
           </div>

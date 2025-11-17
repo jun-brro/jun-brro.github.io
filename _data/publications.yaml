@@ -12,3 +12,10 @@ papers:
     venue: "Arxiv'25: arXiv preprint. 2025."
     paper_pdf: "https://arxiv.org/abs/2508.06220"
     selected: y
+
+  - title: "Baymax in Reality: A Humanoid System for Non-Contact Health Monitoring and Empathetic Interaction"
+    authors: "<b>Junhyeong Park</b>, <a href='https://steadfast-helicona-c82.notion.site/Taemoon-Jeong-69e977daa86b450cb8fa6676c1d287e0/' target='_blank'>Taemoon Jeong</a>, Minseo Kwak, <a href='https://jiiiisoo.github.io/' target='_blank'>Jisoo Kim</a>, <a href='https://seunbite.github.io/' target='_blank'>Seungbeen Lee</a>, <a href='https://scholar.google.com/citations?user=T3-0OQ8AAAAJ&hl=en&oi=ao' target='_blank'>Sungjoon Choi</a>, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
+    venue: "IEEE RAS Humanoids 2025 Robot Fashion Show (Virtual Presentation)"
+    link: "https://robotfashion.show/"
+    video: "https://drive.google.com/file/d/1wuA96b_OiS9T0xvByzkSo0YNln7fl-hf/view?usp=sharing"
+    selected: y
