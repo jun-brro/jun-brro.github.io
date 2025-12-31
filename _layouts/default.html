@@ -127,7 +127,7 @@
             <h1>{{ site.data.main_info.name }}</h1>
             <p>{{ site.data.main_info.title }}</p>
             <p>{{ site.data.main_info.email_primary }}</p>
-            <p class="email-secondary">Secondary: {{ site.data.main_info.email_secondary }}</p>
+            <p class="email-secondary">{{ site.data.main_info.email_secondary | default: "" }}</p>
             <p>
               <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
                 <i class="fa-brands fa-linkedin fa-lg"></i>
