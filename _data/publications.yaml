@@ -1,14 +1,19 @@
 papers:
   - title: "Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?"
-    authors: "<a href='https://jiwanchung.github.io/' target='_blank'>Jiwan Chung</a>, <a href='https://github.com/jeffrobot' target='_blank'>Janghan Yoon</a>, <b>Junhyeong Park</b>, Sangeyl Lee, Joowon Yang, Sooyeon Park, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
+    authors: "<a href='https://jiwanchung.github.io/' target='_blank'>Jiwan Chung</a>, <a href='https://github.com/jeffrobot' target='_blank'>Janghan Yoon</a>, <b>Junhyeong Park</b>, <a href='https://scholar.google.com/citations?user=gA4sNvcAAAAJ&hl=ko' target='_blank'>Sangeyl Lee</a>, Joowon Yang, Sooyeon Park, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
     venue: "ACL 2025 Poster"
     paper_pdf: "https://arxiv.org/abs/2505.24211"
     code: "https://github.com/JiwanChung/ACON"
     data: "https://huggingface.co/datasets/jiwan-chung/ACON"
     selected: y
 
+  - title: "VLM Safety Evaluation Must Move from Classification to Causal Controllability"
+    authors: "<b>Junhyeong Park<sup>‡</sup></b>, <a href='https://scholar.google.com/citations?user=pDwvcO0AAAAJ&hl=ko' target='_blank'>Hanwool Lee<sup>‡</sup></a>,  <a href='https://donggeon.github.io/' target='_blank'>DongGeon Lee,  <a href='https://dasol-choi.github.io/' target='_blank'>Dasol Choi,  <a href='https://ozzaney.github.io/' target='_blank'>Yejin Son,  <a href='https://aim-intelligence.com/en' target='_blank'>Haon Park,  <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
+    venue: Coming soon...
+    selected: y
+  
   - title: "InfoCausalQA:Can Models Perform Non-explicit Causal Reasoning Based on Infographic?"
-    authors: "Keummin Ka<sup>‡</sup>, <b>Junhyeong Park<sup>‡</sup></b>, Jaehyun Jeon, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
+    authors: "<a href='https://scholar.google.com/citations?user=zAYgDO4AAAAJ&hl=ko' target='_blank'>Keummin Ka</a><sup>‡</sup>, <b>Junhyeong Park<sup>‡</sup></b>, <a href='https://scholar.google.com/citations?user=UQ27hUoAAAAJ&hl=en' target='_blank'>Jaehyun Jeon</a>, <a href='https://scholar.google.com/citations?user=WDO24ZYAAAAJ&hl=ko' target='_blank'>Youngjae Yu</a>"
     venue: "Arxiv'25: arXiv preprint. 2025."
     paper_pdf: "https://arxiv.org/abs/2508.06220"
     selected: y

@@ -10,6 +10,12 @@ experiences:
     title: "Independent Graduation Project Student"
     subtitle: "Advised by Prof. Jongyoo Kim"
     category: "school"
+  
+  - place: "AIM Intelligence"
+    time: "Jul. 2025 - Jan. 2026"
+    title: "Research Collaborator"
+    subtitle: "Discovering robustness of guardrail models."
+    category: "work"
 
   - place: "HOWEVER"
     time: "Dec. 2024 - Apr. 2025"
