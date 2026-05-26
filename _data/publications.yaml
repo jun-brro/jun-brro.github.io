@@ -24,7 +24,7 @@ papers:
     data: "https://huggingface.co/datasets/jiwan-chung/ACON"
     selected: y
 
-  - title: "Position: VLM Safety Evaluation Should Measure Controllability Beyond Classification"
+  - title: "VLM Safety Evaluation Must Move from Classification to Causal Controllability"
     thumbnail: "/assets/publications/position.png"
     authors_list:
       - name: "Junhyeong Park"
