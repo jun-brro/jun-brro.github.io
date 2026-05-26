@@ -65,12 +65,13 @@ h4 {
   margin-bottom: 2px;
 }
 .paper p a {
-  color: inherit;
+  color: #248fb8;
   text-decoration: none;
   transition: all 0.2s;
 }
 .paper p a:hover {
   color: #33c3f0;
+  font-weight: bold;
 }
 .paper-buttons {
   margin-top: 5px;

@@ -6,19 +6,27 @@ title: Home
 <div class="docs-section" id="bio">
   <h4>Bio</h4>
   <p>
-  Hello 👋 I'm an undergraduate researcher at <a href="https://alinlab.kaist.ac.kr/" target="_blank">ALIN Lab (KAIST)</a>, advised by prof. <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank">Jinwoo Shin</a>.
-  I believe that the fusion of various modalities, particularly centered around language models, is essential for AI to positively impact society.
-  Especically I'm interested in <b><i>VLA models</i></b> that can effectively understand and learn from action label free datasets. Also, I am discovering the effective <b><i>representation learning</i></b> of generative models.
-  <br/>
-  <br/>
-  I have done my research internship at <a href="https://pi.snu.ac.kr/" target="_blank">MIRLAB (Yonsei, currently SNU PI Lab)</a>, advised by prof. <a href="https://yj-yu.github.io/home/", target="_blank">Youngjae Yu</a>.
-  I have also done my graduation project at <a href="https://mmai.yonsei.ac.kr/" target="_blank">MMAI Lab (Yonsei)</a>, advised by prof. <a href="https://mmai.yonsei.ac.kr/cv/", target="_blank">Jongyoo Kim</a>.
-  I am currently majoring Nano Science & Engineering, and doing Electric & Electronic Engineering as a double-major.
-  I expect to complete my bachelor's degree in the Fall semester of 2026.
-  <br/>
-  <br/>
-  Previously, I have collaborated with <a href="https://aim-intelligence.com/en" target="_blank">AIM Intelligence</a>, <a href="https://www.goodganglabs.com/en" target="_blank">GOODGANG Labs</a>, and <a href="https://corp.joycity.com/ko/main" target="_blank">JOYCITY</a>.
-  I also participated in two startup teams, both selected for the official <a href="https://www.kised.or.kr/menu.es?mid=a10205010000", target="_blank">Pre-Startup Package (예비창업패키지).</a>
+    Hello 👋 I'm an undergraduate researcher at <a href="https://alinlab.kaist.ac.kr/" target="_blank">ALIN Lab
+      (KAIST)</a>, advised by prof. <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank">Jinwoo Shin</a>.
+    I believe that the fusion of various modalities, particularly centered around language models, is essential for AI
+    to positively impact society.
+    Especically I'm interested in <b><i>VLA models</i></b> that can effectively understand and learn from action label
+    free datasets. Also, I am discovering the effective <b><i>representation learning</i></b> of generative models.
+    <br />
+    <br />
+    I have done my research internship at <a href="https://pi.snu.ac.kr/" target="_blank">MIRLAB (Yonsei, currently SNU
+      PI Lab)</a>, advised by prof. <a href="https://yj-yu.github.io/home/" , target="_blank">Youngjae Yu</a>.
+    I have also done my graduation project at <a href="https://mmai.yonsei.ac.kr/" target="_blank">MMAI Lab
+      (Yonsei)</a>, advised by prof. <a href="https://mmai.yonsei.ac.kr/cv/" , target="_blank">Jongyoo Kim</a>.
+    I am currently majoring Nano Science & Engineering, and doing Electric & Electronic Engineering as a double-major.
+    I expect to complete my bachelor's degree in the Fall semester of 2026.
+    <br />
+    <br />
+    Previously, I have collaborated with <a href="https://aim-intelligence.com/en" target="_blank">AIM Intelligence</a>,
+    <a href="https://www.goodganglabs.com/en" target="_blank">GOODGANG Labs</a>, and <a
+      href="https://corp.joycity.com/ko/main" target="_blank">JOYCITY</a>.
+    I also participated in two startup teams, both selected for the official <a
+      href="https://www.kised.or.kr/menu.es?mid=a10205010000" , target="_blank">Pre-Startup Package (예비창업패키지).</a>
 </div>
 
 <!-- ========== NEWS ========== -->
@@ -26,12 +34,12 @@ title: Home
   <h4>News</h4>
   <ul>
     {% for item in site.data.news.news %}
-      <li>
-        <b>{{ item.date }}</b>: {{ item.description }}
-        {% if item.link %}
-          <a href="{{ item.link }}" target="_blank">[Link]</a>
-        {% endif %}
-      </li>
+    <li>
+      <b>{{ item.date }}</b>: {{ item.description }}
+      {% if item.link %}
+      <a href="{{ item.link }}" target="_blank">[Link]</a>
+      {% endif %}
+    </li>
     {% endfor %}
   </ul>
 </div>
@@ -66,8 +74,9 @@ title: Home
 <div class="docs-section" id="publications">
   <h4>Publications & Workshops</h4>
 
-  <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/>
-  <sup>‡</sup> indicates equal contribution.
+  <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google
+      Scholar</a>.<br />
+    <sup>‡</sup> indicates equal contribution.
   </p>
 
   <!-- Temporarily disabled Selected tab -->
@@ -83,7 +92,26 @@ title: Home
       {% for paper in selected_papers %}
         <div class="paper">
           <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
+          <p>
+            {% if paper.authors_list %}
+              {% for author in paper.authors_list %}
+                {% assign author_name = author.name | default: author %}
+                {% assign coauthor_link = site.data.coauthors[author_name] %}
+                
+                {% if author_name == "Junhyeong Park" %}
+                  <b>Junhyeong Park</b>{% if author.equal %}<sup>‡</sup>{% endif %}
+                {% elsif coauthor_link %}
+                  <a href="{{ coauthor_link }}" target="_blank">{{ author_name }}</a>{% if author.equal %}<sup>‡</sup>{% endif %}
+                {% else %}
+                  {{ author_name }}{% if author.equal %}<sup>‡</sup>{% endif %}
+                {% endif %}
+                
+                {% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            {% else %}
+              {{ paper.authors }}
+            {% endif %}
+          </p>
           <p><i>{{ paper.venue }}</i></p>
            <div class="paper-buttons">
             {% if paper.paper_pdf %}
@@ -126,52 +154,72 @@ title: Home
   <div class="tab-content">
     <div class="tab-pane active" id="papers-all">
       {% for paper in site.data.publications.papers %}
-        <div class="paper">
-          {% if paper.thumbnail %}
-          <div class="paper-image">
-            <img src="{{ paper.thumbnail | prepend: site.baseurl }}" alt="{{ paper.title }}" />
-          </div>
-          {% endif %}
-          <div class="paper-content{% unless paper.thumbnail %} paper-content-full{% endunless %}">
-            <p class="title"><b>{{ paper.title }}</b></p>
-            <p>{{ paper.authors }}</p>
-            <p><i>{{ paper.venue }}</i></p>
-            <div class="paper-buttons">
-              {% if paper.paper_pdf %}
-                <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-              {% endif %}
+      <div class="paper">
+        {% if paper.thumbnail %}
+        <div class="paper-image">
+          <img src="{{ paper.thumbnail | prepend: site.baseurl }}" alt="{{ paper.title }}" />
+        </div>
+        {% endif %}
+        <div class="paper-content{% unless paper.thumbnail %} paper-content-full{% endunless %}">
+          <p class="title"><b>{{ paper.title }}</b></p>
+          <p>
+            {% if paper.authors_list %}
+            {% for author in paper.authors_list %}
+            {% assign author_name = author.name | default: author %}
+            {% assign coauthor_link = site.data.coauthors[author_name] %}
 
-              {% if paper.code %}
-                <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-              {% endif %}
+            {% if author_name == "Junhyeong Park" %}
+            <b>Junhyeong Park</b>{% if author.equal %}<sup>‡</sup>{% endif %}
+            {% elsif coauthor_link %}
+            <a href="{{ coauthor_link }}" target="_blank">{{ author_name }}</a>{% if author.equal %}<sup>‡</sup>{% endif
+            %}
+            {% else %}
+            {{ author_name }}{% if author.equal %}<sup>‡</sup>{% endif %}
+            {% endif %}
 
-              {% if paper.project_page %}
-                <a class="button" href="{{ paper.project_page }}" target="_blank">Project Page</a>
-              {% endif %}
+            {% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            {% else %}
+            {{ paper.authors }}
+            {% endif %}
+          </p>
+          <p><i>{{ paper.venue }}</i></p>
+          <div class="paper-buttons">
+            {% if paper.paper_pdf %}
+            <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+            {% endif %}
 
-              {% if paper.data %}
-                <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-              {% endif %}
+            {% if paper.code %}
+            <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+            {% endif %}
 
-              {% if paper.slides %}
-                <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-              {% endif %}
+            {% if paper.project_page %}
+            <a class="button" href="{{ paper.project_page }}" target="_blank">Project Page</a>
+            {% endif %}
 
-              {% if paper.poster %}
-                <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-              {% endif %}
+            {% if paper.data %}
+            <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+            {% endif %}
 
-              {% if paper.video %}
-                <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-              {% endif %}
+            {% if paper.slides %}
+            <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            {% endif %}
 
-              {% if paper.link %}
-                <a class="button" href="{{ paper.link }}" target="_blank">Link</a>
-              {% endif %}
+            {% if paper.poster %}
+            <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+            {% endif %}
 
-            </div>
+            {% if paper.video %}
+            <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+            {% endif %}
+
+            {% if paper.link %}
+            <a class="button" href="{{ paper.link }}" target="_blank">Link</a>
+            {% endif %}
+
           </div>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -258,57 +306,61 @@ title: Home
   <h4>Awards</h4>
 
   <ul class="tab-nav">
-    <li><div class="button active" data-ref="#awards-selected">Selected</div></li>
-    <li><div class="button" data-ref="#awards-all">All</div></li>
+    <li>
+      <div class="button active" data-ref="#awards-selected">Selected</div>
+    </li>
+    <li>
+      <div class="button" data-ref="#awards-all">All</div>
+    </li>
   </ul>
 
   <div class="tab-content">
     <div class="tab-pane active" id="awards-selected">
       {% assign selected_awards = site.data.awards.awards | where: "selected", "y" %}
       {% for award in selected_awards %}
-        <div class="paper">
-          <p class="title"><b>{{ award.competition }}</b>
-            {% if award.date %}
-              <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
-            {% endif %}
-          </p>
-          <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
-          <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
-          {% if award.github or award.media %}
-            <div class="paper-buttons">
-              {% if award.github %}
-                <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
-              {% endif %}
-              {% if award.media %}
-                <a class="button" href="{{ award.media }}" target="_blank">Media</a>
-              {% endif %}
-            </div>
+      <div class="paper">
+        <p class="title"><b>{{ award.competition }}</b>
+          {% if award.date %}
+          <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
+          {% endif %}
+        </p>
+        <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+        <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
+        {% if award.github or award.media %}
+        <div class="paper-buttons">
+          {% if award.github %}
+          <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
+          {% endif %}
+          {% if award.media %}
+          <a class="button" href="{{ award.media }}" target="_blank">Media</a>
           {% endif %}
         </div>
+        {% endif %}
+      </div>
       {% endfor %}
     </div>
 
     <div class="tab-pane" id="awards-all">
       {% for award in site.data.awards.awards %}
-        <div class="paper">
-          <p class="title"><b>{{ award.competition }}</b>
-            {% if award.date %}
-              <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
-            {% endif %}
-          </p>
-          <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
-          <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
-          {% if award.github or award.media %}
-            <div class="paper-buttons">
-              {% if award.github %}
-                <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
-              {% endif %}
-              {% if award.media %}
-                <a class="button" href="{{ award.media }}" target="_blank">Media</a>
-              {% endif %}
-            </div>
+      <div class="paper">
+        <p class="title"><b>{{ award.competition }}</b>
+          {% if award.date %}
+          <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
+          {% endif %}
+        </p>
+        <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+        <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
+        {% if award.github or award.media %}
+        <div class="paper-buttons">
+          {% if award.github %}
+          <a class="button" href="{{ award.github }}" target="_blank">GitHub</a>
+          {% endif %}
+          {% if award.media %}
+          <a class="button" href="{{ award.media }}" target="_blank">Media</a>
           {% endif %}
         </div>
+        {% endif %}
+      </div>
       {% endfor %}
     </div>
   </div>
@@ -327,15 +379,15 @@ title: Home
     <li>
       {% if exp.category == "work" %}
       <div class="direction-l">
-      {% else %}
-      <div class="direction-r">
-      {% endif %}
-        <div class="flag-wrapper">
-          <span class="flag">{{ exp.place }}</span>
-          <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
+        {% else %}
+        <div class="direction-r">
+          {% endif %}
+          <div class="flag-wrapper">
+            <span class="flag">{{ exp.place }}</span>
+            <span class="time-wrapper"><span class="time">{{ exp.time }}</span></span>
+          </div>
+          <div class="desc"><b>{{ exp.title }}</b> <br /> {{ exp.subtitle }}</div>
         </div>
-        <div class="desc"><b>{{ exp.title }}</b> <br/> {{ exp.subtitle }}</div>
-      </div>
     </li>
     {% endfor %}
   </ul>
