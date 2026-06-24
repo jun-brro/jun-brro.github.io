@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jun-brro.kr/sitemap.xml
+Sitemap: https://junhyeong-park.me/sitemap.xml
 

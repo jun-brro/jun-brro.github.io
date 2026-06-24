@@ -2,7 +2,7 @@ source: .
 destination: ./_site
 includes: ./_includes
 baseurl: ""
-url: "https://jun-brro.kr"
+url: "https://junhyeong-park.me"
 
 plugins:
   - jekyll-sitemap
