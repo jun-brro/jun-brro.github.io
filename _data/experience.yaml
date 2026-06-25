@@ -1,48 +1,16 @@
+# Each experience: title (bold heading), time (right-aligned), company (italic, optional link), content
+# Add `link:` under an entry to make the company name a hyperlink.
 experiences:
-  - place: "ALIN Lab (KAIST)"
-    time: "Sep. 2025 - now"
-    title: "Undergraduate Researcher"
-    subtitle: "Advised by Prof. Jinwoo Shin"
-    category: "school"
-
-  - place: "MMAI Lab (Yonsei Univ.)"
-    time: "Jul. 2025 - Nov. 2025"
-    title: "Independent Graduation Project Student"
-    subtitle: "Advised by Prof. Jongyoo Kim"
-    category: "school"
-  
-  - place: "AIM Intelligence"
+  - title: "Research Collaborator"
     time: "Jul. 2025 - Jan. 2026"
-    title: "Research Collaborator"
-    subtitle: "Discovering robustness of guardrail models."
-    category: "work"
+    company: "AIM Intelligence"
+    link: "https://aim-intelligence.com"
 
-  - place: "HOWEVER"
+  - title: "Engineering Lead (Co-founding Member)"
     time: "Dec. 2024 - Apr. 2025"
-    title: "Engineering Lead (Co-founding Member)"
-    subtitle: "General SW & HW developer of photo booth system."
-    category: "work"
+    company: "HOWEVER"
 
-  - place: "GOODGANG Labs"
+  - title: "Collaborative Language Model Engineer"
     time: "Dec. 2024 - Feb. 2025"
-    title: "Language Model Engineer"
-    subtitle: "YAI x GoodGang Labs Collaboration Project"
-    category: "work"
-
-  - place: "MIRLAB (Yonsei Univ.)"
-    time: "Sep. 2024 - Oct. 2025"
-    title: "Research Intern"
-    subtitle: "Advised by Prof. Youngjae Yu"
-    category: "school"
-
-  - place: "Military Service"
-    time: "Mar. 2021 - Sep. 2022"
-    title: "Mandatory Military Service"
-    subtitle: "8th Maneuver Division, Republic of Korea Army"
-    category: "work"
-
-  - place: "Yonsei University"
-    time: "2020 - 2026 (Expected)"
-    title: "B.S. Student"
-    subtitle: "Nano Science & Engineering <br/> Electric & Electronic Engineering (Double Major)"
-    category: "school"
+    company: "GOODGANG Labs"
+    link: "https://www.goodganglabs.com"

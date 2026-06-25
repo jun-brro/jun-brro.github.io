@@ -6,27 +6,15 @@ title: Home
 <div class="docs-section" id="bio">
   <h4>Bio</h4>
   <p>
-    Hello 👋 I'm an undergraduate researcher at <a href="https://alinlab.kaist.ac.kr/" target="_blank">ALIN Lab
-      (KAIST)</a>. I am advised by prof. <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank">Jinwoo Shin</a>.
+    Hello 👋 I'm incoming MS student at <a href="https://alinlab.kaist.ac.kr/" target="_blank">ALIN Lab
+      (KAIST)</a>, starting Fall 2026. I will be advised by prof. <a href="https://alinlab.kaist.ac.kr/shin.html" target="_blank">Jinwoo Shin</a>.
+    
+      <br><br>
+    
     I believe that the fusion of various modalities, particularly centered around language models, is essential for AI
     to positively impact society.
     Especically I'm interested in <b><i>VLA models</i></b> that can effectively understand and learn from action label
     free datasets. Also, I am discovering the effective <b><i>representation learning</i></b> of generative models.
-    <br />
-    <br />
-    I have done my research internship at <a href="https://pi.snu.ac.kr/" target="_blank">MIRLAB (Yonsei, currently SNU
-      PI Lab)</a>, advised by prof. <a href="https://yj-yu.github.io/home/" , target="_blank">Youngjae Yu</a>.
-    I have also done my graduation project at <a href="https://mmai.yonsei.ac.kr/" target="_blank">MMAI Lab
-      (Yonsei)</a>, advised by prof. <a href="https://mmai.yonsei.ac.kr/cv/" , target="_blank">Jongyoo Kim</a>.
-    I am currently majoring Nano Science & Engineering, and doing Electric & Electronic Engineering as a double-major.
-    I expect to complete my bachelor's degree in the Fall semester of 2026.
-    <br />
-    <br />
-    Previously, I have collaborated with <a href="https://aim-intelligence.com" target="_blank">AIM Intelligence</a>,
-    <a href="https://www.goodganglabs.com" target="_blank">GOODGANG Labs</a>, and <a
-      href="https://corp.joycity.com/ko/main" target="_blank">JOYCITY</a>.
-    I also participated in two startup teams, both selected for the official <a
-      href="https://www.kised.or.kr/menu.es?mid=a10205010000" , target="_blank">Pre-Startup Package (예비창업패키지).</a>
 </div>
 
 <!-- ========== NEWS ========== -->
@@ -301,6 +289,28 @@ title: Home
 </div>
 -->
 
+<!-- ========== EXPERIENCES ========== -->
+<div class="docs-section" id="experiences">
+  <h4>Work experiences</h4>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="experiences-all">
+      {% for exp in site.data.experience.experiences %}
+      <div class="paper">
+        <p class="title"><b>{{ exp.title }}</b>
+          {% if exp.time %}
+          <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ exp.time }}</span>
+          {% endif %}
+        </p>
+        <p style="margin-bottom: 5px;">{% if exp.link %}<a href="{{ exp.link }}" target="_blank">{{ exp.company }}</a>{% else %}{{ exp.company }}{% endif %}</p>
+        <p style="color: #555; margin-bottom: 10px;">{{ exp.content }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
 <!-- ========== AWARDS ========== -->
 <div class="docs-section" id="awards">
   <h4>Awards</h4>
@@ -324,7 +334,7 @@ title: Home
           <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
           {% endif %}
         </p>
-        <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+        <p style="margin-bottom: 5px;"><b style="color: #f0b400;">{{ award.award }}</b></p>
         <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
         {% if award.github or award.media %}
         <div class="paper-buttons">
@@ -348,7 +358,7 @@ title: Home
           <span style="float: right; color: #888; font-weight: normal; font-size: 0.9em;">{{ award.date }}</span>
           {% endif %}
         </p>
-        <p style="margin-bottom: 5px;"><i>{{ award.award }}</i></p>
+        <p style="margin-bottom: 5px;"><b style="color: #f0b400;">{{ award.award }}</b></p>
         <p style="color: #555; margin-bottom: 10px;">{{ award.description }}</p>
         {% if award.github or award.media %}
         <div class="paper-buttons">
@@ -375,7 +385,7 @@ title: Home
 
   <!-- The Timeline -->
   <ul class="timeline">
-    {% for exp in site.data.experience.experiences %}
+    {% for exp in site.data.vitae.experiences %}
     <li>
       {% if exp.category == "work" %}
       <div class="direction-l">
