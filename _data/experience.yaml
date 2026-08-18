@@ -1,5 +1,6 @@
 # Each experience: title (bold heading), time (right-aligned), company (italic, optional link), content
 # Add `link:` under an entry to make the company name a hyperlink.
+# Ordered by START date, most recent first.
 experiences:
   - title: "Research Collaborator"
     time: "Jul. 2025 - Jan. 2026"
@@ -9,8 +10,15 @@ experiences:
   - title: "Engineering Lead"
     time: "Dec. 2024 - Apr. 2025"
     company: "HOWEVER"
+    link: "https://www.instagram.com/however.kr/"
 
   - title: "Collaborative Language Model Engineer"
     time: "Dec. 2024 - Feb. 2025"
     company: "GOODGANG Labs"
     link: "https://www.goodganglabs.com"
+
+  - title: "Member, 13th Cohort"
+    time: "Dec. 2023 - Jun. 2026"
+    company: "YAI (Yonsei Artificial Intelligence)"
+    link: "https://y-yai.com/"
+    content: "Yonsei University AI group"

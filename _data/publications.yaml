@@ -1,3 +1,19 @@
+# =============================================================================
+#  Authors — two ways to write each name (mix freely within one paper):
+#
+#    authors_list:
+#      - "Jiwan Chung"                          # plain name; link auto-filled from
+#                                               #   _data/coauthors.yml if the name exists there
+#      - name: "Some Person"                    # object form — add any of:
+#        link: "https://their-site.com"         #   link:  profile URL right next to the name
+#        equal: true                            #   equal: equal-contribution mark (‡)
+#      - name: "Junhyeong Park"                 # yourself:
+#        me: true                               #   me:    render bold, no link
+#
+#  Link priority: inline `link:`  >  _data/coauthors.yml registry.
+#  Tip: for coauthors you cite often, put the link once in coauthors.yml and just
+#  write the plain name here. Use inline `link:` for one-off collaborators.
+# =============================================================================
 papers:
   - title: "RLDX-1 Technical Report"
     thumbnail: "/assets/publications/rldx.png"
@@ -28,6 +44,7 @@ papers:
     thumbnail: "/assets/publications/position.png"
     authors_list:
       - name: "Junhyeong Park"
+        me: true
         equal: true
       - name: "Hanwool Lee"
         equal: true
@@ -45,6 +62,7 @@ papers:
       - name: "Keummin Ka"
         equal: true
       - name: "Junhyeong Park"
+        me: true
         equal: true
       - name: "Jaehyun Jeon"
       - name: "Youngjae Yu"

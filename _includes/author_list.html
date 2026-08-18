@@ -1,0 +1,38 @@
+{%- comment -%}
+  Renders a paper's author list.  Usage:  {% include author_list.html paper=paper %}
+
+  Each author in `paper.authors_list` can be written two ways:
+
+    - "Jiwan Chung"                              # plain name — link (if any) is
+                                                 #   looked up in _data/coauthors.yml
+    - name: "Jiwan Chung"                        # object form — lets you add fields:
+      link: "https://jiwanchung.github.io/"      #   inline profile link (optional)
+      equal: true                                #   mark as equal contribution (‡)
+      me: true                                   #   mark yourself (bold, no link)
+
+  Link resolution (first hit wins):
+    1. author.link                — the inline URL you wrote next to the name
+    2. site.data.coauthors[name]  — the shared registry in _data/coauthors.yml
+
+  "You" is detected by `me: true` OR by the name matching site.data.main_info.name,
+  and is always rendered bold with no link.
+
+  If a paper has no `authors_list`, the plain `paper.authors` string is used.
+{%- endcomment -%}
+{%- if paper.authors_list -%}
+  {%- for author in paper.authors_list -%}
+    {%- assign name = author.name | default: author -%}
+    {%- assign link = author.link | default: site.data.coauthors[name] -%}
+    {%- if author.me or name == site.data.main_info.name -%}
+      <b>{{ name }}</b>
+    {%- elsif link -%}
+      <a href="{{ link }}" target="_blank" rel="noopener">{{ name }}</a>
+    {%- else -%}
+      {{ name }}
+    {%- endif -%}
+    {%- if author.equal %}<sup>‡</sup>{% endif -%}
+    {%- unless forloop.last %}, {% endunless -%}
+  {%- endfor -%}
+{%- else -%}
+  {{ paper.authors }}
+{%- endif -%}

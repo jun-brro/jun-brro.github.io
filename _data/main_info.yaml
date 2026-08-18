@@ -1,8 +1,18 @@
 name: "Junhyeong Park"
 title: "Incoming MS Student @KAIST AI"
+# Short eyebrow label shown above the name in the hero (leave empty to hide)
+role_label: ""
+# One-line editorial tagline shown under the name in the hero
+tagline: "I work on vision-language-action models, multimodal generation, and learning from action-free data."
+# Affiliation line shown in the hero meta row (larger)
+affiliation: "KAIST · ALIN Lab"
+# Role shown next to the affiliation
+role: "MS Student"
 email_primary: "junhyeong.park.ai@kaist.ac.kr"
 email_secondary: ""
 profile_pic: "/assets/profile-pics/profile.jpg"
+# Optional CV link (leave empty to hide the CV link in the hero)
+cv: ""
 linkedin: "https://www.linkedin.com/in/junbrro/"
 github: "https://github.com/jun-brro"
 google_scholar: "https://scholar.google.com/citations?user=Tlm0tJkAAAAJ&hl=en"
