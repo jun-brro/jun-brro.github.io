@@ -69,18 +69,3 @@ papers:
     venue: "KCC 2026 Oral"
     paper_pdf: "https://arxiv.org/abs/2508.06220"
     selected: y
-
-  - title: "Baymax in Reality: A Humanoid System for Non-Contact Health Monitoring and Empathetic Interaction"
-    thumbnail: "/assets/publications/baymax.png"
-    authors_list:
-      - "Junhyeong Park"
-      - "Taemoon Jeong"
-      - "Minseo Kwak"
-      - "Jisoo Kim"
-      - "Seungbeen Lee"
-      - "Sungjoon Choi"
-      - "Youngjae Yu"
-    venue: "IEEE RAS Humanoids 2025 Robot Fashion Show (Virtual Presentation)"
-    link: "https://robotfashion.show/"
-    video: "https://drive.google.com/file/d/1wuA96b_OiS9T0xvByzkSo0YNln7fl-hf/view?usp=sharing"
-    selected: y
