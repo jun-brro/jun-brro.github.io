@@ -13,6 +13,9 @@
 #  Link priority: inline `link:`  >  _data/coauthors.yml registry.
 #  Tip: for coauthors you cite often, put the link once in coauthors.yml and just
 #  write the plain name here. Use inline `link:` for one-off collaborators.
+#
+#  Optional `abstract:` — if present, a collapsible "Abstract" toggle appears on
+#  the right of that entry; clicking it slides the abstract open. Omit to hide.
 # =============================================================================
 papers:
   - title: "RLDX-1 Technical Report"
@@ -22,6 +25,30 @@ papers:
     paper_pdf: "https://arxiv.org/abs/2605.03269"
     code: "https://github.com/RLWRLD/RLDX-1"
     project_page: "https://www.rlwrld.ai/en/rldx-1"
+    abstract: >
+      While Vision-Language-Action models (VLAs) have shown remarkable progress
+      toward human-like generalist robotic policies through the versatile
+      intelligence (broad scene understanding and language-conditioned
+      generalization) inherited from pre-trained Vision-Language Models, they
+      still struggle with complex real-world tasks requiring broader functional
+      capabilities such as motion awareness, long-term memory, and physical
+      sensing. To address this, we introduce RLDX-1, a general-purpose robotic
+      policy for dexterous manipulation built on the Multi-Stream Action
+      Transformer (MSAT), an architecture that unifies these capabilities by
+      integrating heterogeneous modalities through modality-specific streams
+      with cross-modal joint self-attention. RLDX-1 further combines this
+      architecture with system-level design choices, including data synthesis
+      for rare manipulation scenarios, learning procedures specialized for
+      human-like manipulation, and inference optimizations for real-time
+      deployment. Through empirical evaluation, we show that RLDX-1 consistently
+      outperforms recent frontier VLAs across both simulation benchmarks and
+      real-world tasks that require broad functional capabilities beyond general
+      versatility. In particular, RLDX-1 shows superiority in ALLEX humanoid
+      tasks by achieving success rates of 86.8%, highlighting its ability to
+      control a high-DoF humanoid robot under diverse functional demands.
+      Together, these results position RLDX-1 as a promising step toward
+      reliable VLAs for complex, contact-rich, and dynamic real-world dexterous
+      manipulation.
     selected: y
 
   - title: "Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?"
@@ -38,6 +65,21 @@ papers:
     paper_pdf: "https://arxiv.org/abs/2505.24211"
     code: "https://github.com/JiwanChung/ACON"
     data: "https://huggingface.co/datasets/jiwan-chung/ACON"
+    abstract: >
+      Any-to-any generative models aim to enable seamless interpretation and
+      generation across multiple modalities within a unified framework, yet
+      their ability to preserve relationships across modalities remains
+      uncertain. Do unified models truly achieve cross-modal coherence, or is
+      this coherence merely perceived? To explore this, we introduce ACON, a
+      dataset of 1,000 images (500 newly contributed) paired with captions,
+      editing instructions, and Q&A pairs to evaluate cross-modal transfers
+      rigorously. Using three consistency criteria—cyclic consistency, forward
+      equivariance, and conjugated equivariance—our experiments reveal that
+      any-to-any models do not consistently demonstrate greater cross-modal
+      consistency than specialized models in pointwise evaluations such as
+      cyclic consistency. However, equivariance evaluations uncover weak but
+      observable consistency through structured analyses of the intermediate
+      latent space enabled by multiple editing operations.
     selected: y
 
   - title: "VLM Safety Evaluation Must Move from Classification to Causal Controllability"
@@ -68,4 +110,24 @@ papers:
       - name: "Youngjae Yu"
     venue: "KCC 2026 Oral"
     paper_pdf: "https://arxiv.org/abs/2508.06220"
+    abstract: >
+      Recent advances in Vision-Language Models (VLMs) have demonstrated
+      impressive capabilities in perception and reasoning. However, the ability
+      to perform causal inference—a core aspect of human cognition—remains
+      underexplored, particularly in multimodal settings. In this study, we
+      introduce InfoCausalQA, a novel benchmark designed to evaluate causal
+      reasoning grounded in infographics that combine structured visual data
+      with textual context. The benchmark comprises two tasks: quantitative
+      causal reasoning based on inferred numerical trends, and semantic causal
+      reasoning involving five types of causal relations (cause, effect,
+      intervention, counterfactual, and temporal). We manually collected 494
+      infographic-text pairs from four public sources and used GPT-4o to
+      generate 1,482 high-quality multiple-choice QA pairs, then carefully
+      revised by humans so they cannot be answered from surface-level cues alone
+      but instead require genuine visual grounding. Our results reveal that
+      current VLMs exhibit limited capability in computational reasoning and even
+      more pronounced limitations in semantic causal reasoning, with performance
+      significantly lower than humans. Through InfoCausalQA, we highlight the
+      need for advancing the causal reasoning abilities of multimodal AI
+      systems.
     selected: y

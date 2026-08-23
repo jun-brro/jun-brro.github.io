@@ -1,0 +1,17 @@
+# =============================================================================
+#  LinkedIn posts featured in the "Recent Activity" strip (index.html §07).
+#
+#  How to add a post:
+#    1. Open the post on LinkedIn.
+#    2. Click the "..." menu at the TOP-RIGHT of that post → "Embed this post".
+#    3. In the popup, copy the URL inside  src="..."  — it looks like:
+#         https://www.linkedin.com/embed/feed/update/urn:li:share:7XXXXXXXXXXXXXXXXXX
+#    4. Paste that URL as `embed:` below. Add as many as you like — newest first.
+#
+#  Leave the list with only the empty entry to hide the feed (a placeholder shows).
+# =============================================================================
+posts:
+  - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7458855802431524864?collapsed=1"
+  - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7458193657536561152?collapsed=1"
+  - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7394657623716978688?collapsed=1"
+  - embed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7391705854812672000?collapsed=1"

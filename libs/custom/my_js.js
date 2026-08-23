@@ -24,6 +24,31 @@ $(document).ready(function() {
     $document.on('click', closePopover)
     $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
+    initAbstracts();
+  }
+
+  function initAbstracts() {
+    $('.abstract-toggle').on('click', function() {
+      var $btn = $(this);
+      var $panel = $btn.closest('.paper').find('.paper-abstract');
+      var isOpen = $btn.attr('aria-expanded') === 'true';
+      if (isOpen) {
+        // set current height so the transition to 0 animates
+        $panel.css('max-height', $panel[0].scrollHeight + 'px');
+        $panel[0].offsetHeight; // force reflow
+        $panel.removeClass('open').css('max-height', '0px');
+        $btn.attr('aria-expanded', 'false');
+      } else {
+        $panel.addClass('open').css('max-height', $panel[0].scrollHeight + 'px');
+        $btn.attr('aria-expanded', 'true');
+      }
+    });
+    // once open, drop the fixed height so long text / reflow isn't clipped
+    $('.paper-abstract').on('transitionend', function(e) {
+      if (e.originalEvent.propertyName === 'max-height' && $(this).hasClass('open')) {
+        $(this).css('max-height', 'none');
+      }
+    });
   }
 
   function smoothScroll(e) {

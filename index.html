@@ -56,6 +56,7 @@ title: Home
     <div class="tab-pane active" id="papers-all">
       {% for paper in site.data.publications.papers %}
       <div class="paper">
+        <div class="paper-head">
         {% if paper.thumbnail %}
         <div class="paper-image">
           <img src="{{ paper.thumbnail | prepend: site.baseurl }}" alt="{{ paper.title }}" />
@@ -99,6 +100,15 @@ title: Home
             {% endif %}
           </div>
         </div>
+        {% if paper.abstract %}
+        <button class="abstract-toggle" type="button" aria-expanded="false" aria-label="Toggle abstract">Abstract<span class="abstract-chev" aria-hidden="true">+</span></button>
+        {% endif %}
+        </div>
+        {% if paper.abstract %}
+        <div class="paper-abstract">
+          <div class="paper-abstract-inner"><p>{{ paper.abstract }}</p></div>
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
@@ -190,10 +200,38 @@ title: Home
   </div>
 </div>
 
+<!-- ========== RECENT ACTIVITY (LinkedIn) ========== -->
+<div class="docs-section" id="activity">
+  <div class="section-head">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Recent Activity</h2>
+  </div>
+
+  <p class="section-note">
+    Selected posts from <a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>. Scroll sideways to browse.
+  </p>
+
+  {% assign li_posts = site.data.linkedin.posts | where_exp: "p", "p.embed != ''" %}
+  {% if li_posts.size > 0 %}
+  <div class="activity-strip">
+    {% for post in li_posts %}
+    <div class="activity-card">
+      <iframe src="{{ post.embed }}" title="LinkedIn post" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="section-note activity-placeholder">
+    Featured LinkedIn posts will appear here once added.
+    Paste a post's embed URL into <code>_data/linkedin.yaml</code> to switch it on.
+  </p>
+  {% endif %}
+</div>
+
 <!-- ========== VITÆ ========== -->
 <div class="docs-section" id="resume">
   <div class="section-head">
-    <span class="section-num">06</span>
+    <span class="section-num">07</span>
     <h2 class="section-title">Vitæ</h2>
   </div>
 
@@ -208,4 +246,16 @@ title: Home
     {% if exp.time %}<span class="time-tag">{{ exp.time }}</span>{% endif %}
   </div>
   {% endfor %}
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="docs-section" id="stats">
+  <div class="section-head">
+    <span class="section-num">08</span>
+    <h2 class="section-title">Stats</h2>
+  </div>
+
+  <div class="flag-counter">
+    <a href="https://info.flagcounter.com/FCXM"><img src="https://s01.flagcounter.com/map/FCXM/size_l/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/" alt="Flag Counter" border="0"></a>
+  </div>
 </div>
