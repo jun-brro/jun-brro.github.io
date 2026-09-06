@@ -6,7 +6,7 @@ $(document).ready(function() {
       $body = $('body'),
       $window = $(window),
       $popoverLink = $('[data-popover]'),
-      navOffsetTop = $nav.offset().top,
+      navOffsetTop = $nav.length ? $nav.offset().top : 0,
       $document = $(document),
       entityMap = {
         "&": "&amp;",
@@ -25,6 +25,50 @@ $(document).ready(function() {
     $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
     initAbstracts();
+    initSideNav();
+    initSidebarWheel();
+  }
+
+  // The sidebar is fixed (overflow hidden); forward wheel scrolling over it
+  // to the main column so the page still scrolls wherever the cursor is.
+  function initSidebarWheel() {
+    var sidebar = document.querySelector('.sidebar');
+    var main = document.querySelector('.main-col');
+    if (!sidebar || !main) return;
+    sidebar.addEventListener('wheel', function(e) {
+      if (window.getComputedStyle(main).overflowY === 'visible') return; // stacked/mobile
+      e.preventDefault();
+      // normalize deltaMode: 0 = pixels (trackpad), 1 = lines, 2 = pages
+      var dy = e.deltaY;
+      if (e.deltaMode === 1) dy *= 16;
+      else if (e.deltaMode === 2) dy *= main.clientHeight;
+      main.scrollTop += dy;
+    }, { passive: false });
+  }
+
+  function initSideNav() {
+    var $links = $('.side-nav a');
+    if (!$links.length) return;
+    var sections = [];
+    $links.each(function() {
+      var hash = $(this).attr('href');
+      if (hash && hash.charAt(0) === '#' && $(hash).length) {
+        sections.push({ $link: $(this), $el: $(hash) });
+      }
+    });
+    if (!sections.length) return;
+    function spy() {
+      var threshold = 140; // viewport-relative, works whichever element scrolls
+      var active = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].$el[0].getBoundingClientRect().top <= threshold) active = sections[i];
+      }
+      $links.removeClass('active');
+      if (active) active.$link.addClass('active');
+    }
+    $window.on('scroll', spy);
+    $('.main-col').on('scroll', spy);
+    spy();
   }
 
   function initAbstracts() {
@@ -52,17 +96,23 @@ $(document).ready(function() {
   }
 
   function smoothScroll(e) {
+    var hash = this.hash;
+    if (!hash || !$(hash).length) return;
     e.preventDefault();
-    $(document).off("scroll");
-    var target = this.hash,
-        menu = target;
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top-40
-    }, 0, 'swing', function () {
-        window.location.hash = target;
-        $(document).on("scroll", onScroll);
-    });
+    var offset = 32;
+    var $main = $('.main-col');
+    var mainScrolls = $main.length &&
+        window.getComputedStyle($main[0]).overflowY !== 'visible' &&
+        $main[0].scrollHeight > $main[0].clientHeight + 2;
+    if (mainScrolls) {
+      var t = $main.scrollTop() + $(hash)[0].getBoundingClientRect().top
+              - $main[0].getBoundingClientRect().top - offset;
+      $main.stop().animate({ scrollTop: t }, 320, 'swing');
+    } else {
+      var wt = $(window).scrollTop() + $(hash)[0].getBoundingClientRect().top - offset;
+      $('html, body').stop().animate({ scrollTop: wt }, 320, 'swing');
+    }
+    if (window.history && history.replaceState) history.replaceState(null, '', hash);
   }
 
   function openPopover(e) {
@@ -86,12 +136,14 @@ $(document).ready(function() {
 });
 
   function resize() {
+    if (!$nav.length) return
     $body.removeClass('has-docked-nav')
     navOffsetTop = $nav.offset().top
     onScroll()
   }
 
   function onScroll() {
+    if (!$nav.length) return
     if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
       $body.addClass('has-docked-nav')
     }

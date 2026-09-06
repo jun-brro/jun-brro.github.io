@@ -116,75 +116,68 @@
 </head>
 <body>
 
-  <!-- Primary Page Layout
+  <!-- Primary Page Layout — two column: fixed sidebar + scrolling main
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div class="layout">
 
-    <section class="header">
-      <div class="hero">
-        <div class="hero-body">
-          {% if site.data.main_info.role_label and site.data.main_info.role_label != "" %}
-          <span class="eyebrow hero-eyebrow">{{ site.data.main_info.role_label }}</span>
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <a class="side-portrait" href="{{ site.baseurl }}/"><img src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}' alt="{{ site.data.main_info.name }}"></a>
+        <h1 class="side-name">{{ site.data.main_info.name }}</h1>
+        {% if site.data.main_info.tagline %}
+        <p class="side-tagline">{{ site.data.main_info.tagline }}</p>
+        {% endif %}
+        {% if site.data.main_info.affiliation %}
+        <p class="side-meta">{{ site.data.main_info.affiliation }}{% if site.data.main_info.role %}<span class="side-role">{{ site.data.main_info.role }}</span>{% endif %}</p>
+        {% endif %}
+        <ul class="side-links">
+          <li><a href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener">Scholar <span class="arrow">↗</span></a></li>
+          <li><a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a></li>
+          <li><a href="{{ site.data.main_info.x }}" target="_blank" rel="noopener">X <span class="arrow">↗</span></a></li>
+          <li><a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a></li>
+          <li><a href="mailto:{{ site.data.main_info.email_primary }}">Email</a></li>
+          {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
+          <li><a href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" rel="noopener">CV <span class="arrow">↗</span></a></li>
           {% endif %}
-          <h1 class="hero-name">{{ site.data.main_info.name }}</h1>
-          {% if site.data.main_info.tagline %}
-          <p class="hero-tagline">{{ site.data.main_info.tagline }}</p>
-          {% endif %}
-          {% if site.data.main_info.affiliation %}
-          <p class="hero-meta">{{ site.data.main_info.affiliation }}{% if site.data.main_info.role %}<span class="hero-role">{{ site.data.main_info.role }}</span>{% endif %}</p>
-          {% endif %}
-          <ul class="hero-links">
-            <li><a href="{{ site.data.main_info.google_scholar }}" target="_blank" rel="noopener">Scholar <span class="arrow">↗</span></a></li>
-            <li><a href="{{ site.data.main_info.github }}" target="_blank" rel="noopener">GitHub <span class="arrow">↗</span></a></li>
-            <li><a href="{{ site.data.main_info.x }}" target="_blank" rel="noopener">X <span class="arrow">↗</span></a></li>
-            <li><a href="{{ site.data.main_info.linkedin }}" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a></li>
-            <li><a href="mailto:{{ site.data.main_info.email_primary }}">Email</a></li>
-            {% if site.data.main_info.cv and site.data.main_info.cv != "" %}
-            <li><a href="{{ site.data.main_info.cv | prepend: site.baseurl }}" target="_blank" rel="noopener">CV <span class="arrow">↗</span></a></li>
-            {% endif %}
-          </ul>
-        </div>
-        <div class="hero-portrait">
-          <a href="{{ site.baseurl }}/"><img src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}' alt="{{ site.data.main_info.name }}"></a>
-        </div>
-      </div>
-    </section>
-
-    <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#news" | prepend: site.baseurl }}>News</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Research</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experiences" | prepend: site.baseurl }}>Experience</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#awards" | prepend: site.baseurl }}>Awards</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#activity" | prepend: site.baseurl }}>Activity</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>Vitæ</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#stats" | prepend: site.baseurl }}>Stats</a></li>
         </ul>
+        <nav class="side-nav">
+          <ul>
+            <li><a href="#bio">About</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#publications">Research</a></li>
+            <li><a href="#experiences">Experience</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#activity">Activity</a></li>
+            <li><a href="#resume">Vitæ</a></li>
+            <li><a href="#stats">Stats</a></li>
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </aside>
 
-    {{ content}}
+    <main class="main-col">
 
-    <div class="footer">
-      <span>© {{ site.data.main_info.name }}</span>
-      <div class="footer-social">
-        <span onclick="window.open('{{ site.data.main_info.linkedin }}')" title="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </span>
-        <span onclick="window.open('{{ site.data.main_info.github }}')" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </span>
-        <span onclick="window.open('{{ site.data.main_info.x }}')" title="X">
-          <i class="fa-brands fa-x-twitter"></i>
-        </span>
-        <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" title="Google Scholar">
-          <i class="ai ai-google-scholar" aria-hidden="true"></i>
-        </span>
+      {{ content}}
+
+      <div class="footer">
+        <span>© {{ site.data.main_info.name }}</span>
+        <div class="footer-social">
+          <span onclick="window.open('{{ site.data.main_info.linkedin }}')" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </span>
+          <span onclick="window.open('{{ site.data.main_info.github }}')" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </span>
+          <span onclick="window.open('{{ site.data.main_info.x }}')" title="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </span>
+          <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" title="Google Scholar">
+            <i class="ai ai-google-scholar" aria-hidden="true"></i>
+          </span>
+        </div>
       </div>
-    </div>
+
+    </main>
 
   </div>
 
