@@ -471,6 +471,8 @@ sup { color: var(--muted); font-size: 0.7em; }
   color: var(--gold);
   font-weight: 500;
   margin-bottom: 0.3rem;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 /* News as a clean list */
@@ -617,9 +619,13 @@ sup { color: var(--muted); font-size: 0.7em; }
   .abstract-toggle { align-self: flex-start; }
   .paper-image { width: 100%; max-width: 260px; }
   .entry { flex-direction: column; gap: 6px; }
-  .time-tag { padding-top: 0; }
+  .time-tag { padding-top: 0; white-space: normal; }
   .news-list li { flex-direction: column; gap: 4px; }
   .news-date { flex-basis: auto; }
+  /* keep long titles/badges/descriptions from forcing horizontal overflow */
+  .entry-title, .entry-sub, .entry-desc, .paper .title, .prose, .section-note {
+    overflow-wrap: anywhere;
+  }
 }
 
 /* Keep image-with-caption helper usable */
