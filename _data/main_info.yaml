@@ -5,7 +5,7 @@ role_label: ""
 # One-line editorial tagline shown under the name in the hero
 tagline: "I work on vision-language-action models, multimodal generation, and learning from action-free data."
 # Affiliation line shown in the hero meta row (larger)
-affiliation: "KAIST · ALIN Lab"
+affiliation: "KAIST · AGI Lab"
 # Role shown next to the affiliation
 role: "MS Student"
 email_primary: "junhyeong.park.ai@kaist.ac.kr"
