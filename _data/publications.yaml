@@ -82,7 +82,7 @@ papers:
       latent space enabled by multiple editing operations.
     selected: y
 
-  - title: "VLM Safety Evaluation Must Move from Classification to Causal Controllability"
+  - title: "Multimodal Safety Evaluation Should Measure Controllability Beyond Classification"
     thumbnail: "/assets/publications/position.png"
     authors_list:
       - name: "Junhyeong Park"
@@ -95,7 +95,26 @@ papers:
       - name: "Yejin Son"
       - name: "Haon Park"
       - name: "Youngjae Yu"
-    venue: Coming soon...
+    venue: "Arxiv preprint"
+    paper_pdf: "https://arxiv.org/abs/2610.06452"
+    abstract: >
+      VLM safety is commonly evaluated through input- and output-level
+      classification. Such classification is necessary, but it does not reveal
+      whether a safety state is accessible or controllable inside the model.
+      We argue that multimodal safety evaluation should therefore report a
+      controllability profile alongside behavioral classification, separating
+      representation-level detectability, cross-modal specificity, intervention
+      sensitivity, and benign-preserving selectivity. Using implicit toxicity
+      as a stress case, we instantiate this profile on LlavaGuard and Qwen3.5
+      with sparse feature decompositions. LlavaGuard admits localized handles
+      with a narrow benign-preserving intervention range and modest downstream
+      safety gains, whereas Qwen3.5 supports strong representation-level
+      readout but no comparable selective-control regime under the tested
+      operators. These results show that internal readout and controllability
+      can diverge. Future multimodal safety benchmarks should therefore report
+      not only behavioral safety metrics, but also whether safety-relevant
+      internal signals can be intervention-tested and controlled within a
+      validated operating range.
     selected: y
   
   - title: "InfoCausalQA:Can Models Perform Non-explicit Causal Reasoning Based on Infographic?"
