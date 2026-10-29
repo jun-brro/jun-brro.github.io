@@ -1,14 +1,18 @@
 news:
+  - date: "Oct 2026"
+    description: "🎉 <b>H2RB</b> is accepted to CoRL 2026 Workshop (Scaling H2R)!"
+    link: "https://scaling-h2r-corl.github.io/"
+
   - date: "Jun 2026"
-    description: "Happy to share that I will be joining ALIN Lab, KAIST as a MS student in Fall 2026!"
+    description: "Happy to share that I will be joining AGI Lab, KAIST as a MS student in Fall 2026!"
 
   - date: "May 2026"
-    description: "🎉 RLDX-1 Technical Report is out! Fortunate to be one of the core contributors."
+    description: "🎉 <b>RLDX-1 Technical Report</b> is out! Fortunate to be one of the core contributors."
     link: "https://www.rlwrld.ai/en/rldx-1"
 
   - date: "Nov 2025"
-    description: "I will be attending 2025 SK AI Summit, as a presenter of <i>A-EYE</i>."
+    description: "I will be attending 2025 SK AI Summit, as a presenter of <b>A-EYE</b>."
     link: "https://www.skaisummit.com/"
 
   - date: "Sep 2025"
-    description: "Started undergraduate research internship at ALIN Lab, KAIST."
+    description: "Started undergraduate research internship at ALIN Lab (currently AGI LAB), KAIST."
