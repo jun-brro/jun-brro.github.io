@@ -69,6 +69,8 @@ title: Home
           <div class="paper-buttons">
             {% if paper.paper_pdf %}
             <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank" rel="noopener">Paper</a>
+            {% else %}
+            <span class="button button-pending">Paper (to be updated)</span>
             {% endif %}
 
             {% if paper.code %}

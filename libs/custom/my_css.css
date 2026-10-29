@@ -382,6 +382,9 @@ sup { color: var(--muted); font-size: 0.7em; }
 }
 .paper-buttons .button::after { content: " \2197"; color: var(--faint); }
 .paper-buttons .button:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.paper-buttons .button-pending { color: var(--faint); border-bottom-color: transparent; font-style: italic; cursor: default; }
+.paper-buttons .button-pending::after { content: none; }
+.paper-buttons .button-pending:hover { color: var(--faint); border-bottom-color: transparent; }
 
 /* Abstract toggle — sits at the right of the row */
 .abstract-toggle {
