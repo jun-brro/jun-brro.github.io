@@ -321,12 +321,13 @@ sup { color: var(--muted); font-size: 0.7em; }
   flex-shrink: 0;
   width: 216px;
   overflow: hidden;
+  border: 1px solid var(--rule);
+  line-height: 0;
 }
 .paper-image img {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid var(--rule);
   transition: transform 0.5s ease;
 }
 .paper-image:hover img { transform: scale(1.03); }
