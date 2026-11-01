@@ -27,7 +27,7 @@ papers:
       - name: "Taeyoung Kim"
       - name: "Huiwon Jang"
       - name: "Jinwoo Shin"
-    venue: "CoRL 2026 Workshop (Scaling H2R)"
+    venue: "<b>CoRL 2026 Workshop (Scaling H2R)</b> <b style='color:#c53030;'>Oral Presentation</b>"
     abstract: >
       Pretrained Vision-Language-Action (VLA) policies provide a strong starting
       point for deployment, but adapting them to a target robot and environment
@@ -56,7 +56,7 @@ papers:
   - title: "RLDX-1 Technical Report"
     thumbnail: "/assets/publications/rldx.png"
     authors: "RLDX Team (Core contributor)"
-    venue: "RLWRLD Technical Report 2026"
+    venue: "<b>RLWRLD Technical Report 2026</b>"
     paper_pdf: "https://arxiv.org/abs/2605.03269"
     code: "https://github.com/RLWRLD/RLDX-1"
     project_page: "https://www.rlwrld.ai/en/rldx-1"
@@ -96,7 +96,7 @@ papers:
       - "Joowon Yang"
       - "Sooyeon Park"
       - "Youngjae Yu"
-    venue: "ACL 2025 Poster"
+    venue: "<b>ACL 2025 Poster</b>"
     paper_pdf: "https://arxiv.org/abs/2505.24211"
     code: "https://github.com/JiwanChung/ACON"
     data: "https://huggingface.co/datasets/jiwan-chung/ACON"
@@ -162,7 +162,7 @@ papers:
         equal: true
       - name: "Jaehyun Jeon"
       - name: "Youngjae Yu"
-    venue: "KCC 2026 Oral"
+    venue: "<b>KCC 2026 Oral Presentation</b>"
     paper_pdf: "https://arxiv.org/abs/2508.06220"
     abstract: >
       Recent advances in Vision-Language Models (VLMs) have demonstrated

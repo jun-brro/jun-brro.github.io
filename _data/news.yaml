@@ -1,10 +1,10 @@
 news:
   - date: "Oct 2026"
-    description: "🎉 <b>H2RB</b> is accepted to CoRL 2026 Workshop (Scaling H2R)!"
+    description: "🎉 <b>H2RB</b> is accepted to CoRL 2026 Workshop (Scaling H2R) as <b style=\"color: #c53030;\">Oral presentation</b>!"
     link: "https://scaling-h2r-corl.github.io/"
 
   - date: "Jun 2026"
-    description: "Happy to share that I will be joining AGI Lab, KAIST as a MS student in Fall 2026!"
+    description: "Happy to share that I will be joining  <b>AGI Lab (KAIST)</b> as a MS student in Fall 2026!"
 
   - date: "May 2026"
     description: "🎉 <b>RLDX-1 Technical Report</b> is out! Fortunate to be one of the core contributors."
