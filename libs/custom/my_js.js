@@ -29,13 +29,15 @@ $(document).ready(function() {
     initSidebarWheel();
   }
 
-  // The sidebar is fixed (overflow hidden); forward wheel scrolling over it
-  // to the main column so the page still scrolls wherever the cursor is.
+  // Only .main-col scrolls (the page itself is overflow:hidden). Forward wheel
+  // scrolling from everywhere outside it — the sidebar and the empty margins on
+  // either side of the centered layout — so the page scrolls wherever the cursor is.
   function initSidebarWheel() {
-    var sidebar = document.querySelector('.sidebar');
     var main = document.querySelector('.main-col');
-    if (!sidebar || !main) return;
-    sidebar.addEventListener('wheel', function(e) {
+    if (!main) return;
+    document.addEventListener('wheel', function(e) {
+      if (main.contains(e.target)) return; // main column scrolls natively
+      if (e.ctrlKey) return; // pinch-zoom
       if (window.getComputedStyle(main).overflowY === 'visible') return; // stacked/mobile
       e.preventDefault();
       // normalize deltaMode: 0 = pixels (trackpad), 1 = lines, 2 = pages
