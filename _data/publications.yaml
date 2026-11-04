@@ -28,6 +28,9 @@ papers:
       - name: "Huiwon Jang"
       - name: "Jinwoo Shin"
     venue: "<b>CoRL 2026 Workshop (Scaling H2R)</b> <b style='color:#c53030;'>Oral Presentation</b>"
+    paper_pdf: "https://arxiv.org/abs/2611.04391"
+    code: "https://github.com/jun-brro/h2rb-code"
+    project_page: "https://junhyeong-park.me/h2rb"
     abstract: >
       Pretrained Vision-Language-Action (VLA) policies provide a strong starting
       point for deployment, but adapting them to a target robot and environment
