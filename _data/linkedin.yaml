@@ -11,6 +11,7 @@
 #  Leave the list with only the empty entry to hide the feed (a placeholder shows).
 # =============================================================================
 posts:
+  - embed: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7523777872679972864?collapsed=1"
   - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7515215158994997248?collapsed=1"
   - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7458855802431524864?collapsed=1"
   - embed: "https://www.linkedin.com/embed/feed/update/urn:li:share:7458193657536561152?collapsed=1"
