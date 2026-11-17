@@ -3,7 +3,7 @@ title: "MS Student @KAIST AI"
 # Short eyebrow label shown above the name in the hero (leave empty to hide)
 role_label: ""
 # One-line editorial tagline shown under the name in the hero
-tagline: "I work on vision-language-action models, multimodal generation, and learning from action-free data."
+tagline: "I work on robotic foundation models, multimodal representation learning, and agentic robotics system."
 # Affiliation line shown in the hero meta row (larger)
 affiliation: "KAIST · AGI Lab"
 # Role shown next to the affiliation
